@@ -1,5 +1,8 @@
 <?php
 
+use App\Task;
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +23,7 @@
  * Display All Tasks
  */
 Route::get('/', function () {
-  $tasks = \App\Task::orderBy('created_at', 'asc')->get();
+  $tasks = Task::orderBy('created_at', 'asc')->get();
 
   return view('tasks', [
     'tasks' => $tasks
